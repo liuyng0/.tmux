@@ -406,3 +406,6 @@ tmux_conf_update_plugins_on_reload=true
 set -g base-index 1
 setw -g pane-base-index 1
 set -g mouse on
+
+set -g prefix2 C-z                        # GNU-Screen compatible prefix
+bind C-z send-prefix -2
