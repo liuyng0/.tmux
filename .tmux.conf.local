@@ -407,9 +407,9 @@ set -g base-index 1
 setw -g pane-base-index 1
 set -g mouse on
 
-set-option -g prefix C-x
-set -g prefix2 C-z                        # GNU-Screen compatible prefix
-bind C-z send-prefix -2
+set-option -g prefix C-q
+set -g prefix2 C-q                        # GNU-Screen compatible prefix
+bind C-q send-prefix -2
 
 # split current window horizontally
 bind - split-window -v
