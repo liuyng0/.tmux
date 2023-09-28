@@ -418,3 +418,5 @@ bind C-q send-prefix -2
 bind - split-window -v
 # split current window vertically
 bind \\ split-window -h
+
+set -g mode-keys vi
