@@ -377,6 +377,7 @@ set -g @plugin 'tmux-plugins/tmux-cpu'
 set -g @plugin 'tmux-plugins/tmux-sensible'
 set -g @plugin 'tmux-plugins/tmux-resurrect'
 set -g @plugin 'tmux-plugins/tmux-continuum'
+set -g @plugin 'sainnhe/tmux-fzf'
 set -g @resurrect-dir '~/.tmux/resurrect'
 set -g @continuum-restore 'on'
 
@@ -420,3 +421,4 @@ bind - split-window -v
 bind \\ split-window -h
 
 set -g mode-keys vi
+bind-key "w" run-shell -b "~/.tmux/plugins/tmux-fzf/scripts/window.sh switch"
