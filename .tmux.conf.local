@@ -420,5 +420,8 @@ bind - split-window -v
 # split current window vertically
 bind \\ split-window -h
 
+# Simple status bar
+set-option -g status-position top
+
 set -g mode-keys vi
 bind-key "w" run-shell -b "~/.tmux/plugins/tmux-fzf/scripts/window.sh switch"
