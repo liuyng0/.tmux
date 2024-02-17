@@ -411,9 +411,17 @@ set -g @continuum-restore 'on'
 
 set -g base-index 1
 setw -g pane-base-index 1
-set -g mouse on
 # sane scrolling:
-bind -n WheelUpPane if-shell -F -t = "#{mouse_any_flag}" "send-keys -M" "if -Ft= '#{pane_in_mode}' 'send-keys -M' 'copy-mode -e; send-keys -M'"
+# mouses
+set -g mouse on
+# bind -n WheelUpPane if-shell -F -t = "#{mouse_any_flag}" "send-keys -M" "if -Ft= '#{pane_in_mode}' 'send-keys -M' 'copy-mode -e; send-keys -M'"
+
+# terminal overrides
+set -g default-terminal "tmux-256color" # colors!
+set -ga terminal-overrides ",*256col*:RGB"
+set-environment -g COLORTERM "truecolor"
+# set -ga terminal-overrides ',screen*:smcup@:rmcup@'
+# set -ga terminal-overrides '*:Ss=\E[%p1%d q:Se=\E[ q'
 
 set-option -g prefix C-q
 set -g prefix2 C-q                        # GNU-Screen compatible prefix
@@ -426,7 +434,7 @@ bind \\ split-window -h
 
 # Simple status bar
 set-option -g status-position top
-#set-option -g status-justify centre
+# set-option -g status-justify centre
 
 set -g mode-keys vi
 bind-key "w" run-shell -b "~/.tmux/plugins/tmux-fzf/scripts/window.sh switch"
