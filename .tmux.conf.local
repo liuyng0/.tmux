@@ -438,3 +438,5 @@ set-option -g status-position top
 
 set -g mode-keys vi
 bind-key "w" run-shell -b "~/.tmux/plugins/tmux-fzf/scripts/window.sh switch"
+bind-key N swap-window -t +1 \; next-window
+bind-key P swap-window -t -1 \; previous-window
